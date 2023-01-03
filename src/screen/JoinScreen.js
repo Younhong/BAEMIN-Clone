@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components/native";
 import auth from '@react-native-firebase/auth';
+import { ActivityIndicator, Alert } from "react-native";
 
 const Container = styled.View`
     flex: 1;
@@ -15,7 +16,7 @@ const TextInput = styled.TextInput`
     border-radius: 20px;
     margin-bottom: 10px;
     font-size: 16px;
-    color: white;
+    color: black;
     border-color: black;
     border-width: 1px;
 `;
@@ -29,14 +30,6 @@ const LoginBtn = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
     margin-top: 30px;
-`;
-
-const Wrapper = styled.View`
-    margin-top: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0px;
 `;
 
 const BtnText = styled.Text`
