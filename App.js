@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-
-const MainView = styled.View`
-  background-color: tomato;
-  flex: 1;
-`;
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { NavigationContainer } from '@react-navigation/native';
+import LoggedInNav from './src/navigator/LoggedInNav';
+import LoggedOutNav from './src/navigator/LoggedOutNav';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const queryClient = new QueryClient();
 
   useEffect(() => {
     getUserData();
 
     auth().onAuthStateChanged((user) => {
-      if (user) {
+      if (!user) {
         console.log("Logged In");
         setIsLoggedIn(true);
       } else {
@@ -25,7 +25,7 @@ export default function App() {
     });
   }, []);
 
-  const getUserData = async() => {
+  const getUserData = async () => {
     const user1 = await firestore().collection('Users').doc('8OZhCQiSkWYQGqvkJ7gN').get();
     console.log(user1.data());
 
@@ -35,6 +35,10 @@ export default function App() {
   }
 
   return (
-    <MainView />
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        {isLoggedIn ? <LoggedInNav /> : <LoggedOutNav />}
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
