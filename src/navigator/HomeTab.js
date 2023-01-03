@@ -9,15 +9,15 @@ const HomeTab = () => {
     return (
         <Tab.Navigator
             sceneContainerStyle={{
-                backgroundColor:"white",
+                backgroundColor: "white",
             }}
             screenOptions={{
                 unmountOnBlur: true,
                 tabBarStyle: {
-                    backgroundColor:"white",
+                    backgroundColor: "white",
                 },
                 headerStyle: {
-                    backgroundColor:"white",
+                    backgroundColor: "white",
                 },
                 tabBarLabelStyle: {
                     marginTop: -5,
@@ -40,6 +40,15 @@ const HomeTab = () => {
                 options={{
                     tabBarIcon: ({ color, size }) => {
                         return <Ionicons name="heart-outline" size={size} color={color} />
+                    }
+                }}
+            />
+            <Tab.Screen
+                name="홈"
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => {
+                        return <Ionicons name="home-outline" size={size} color={color} />
                     }
                 }}
             />
