@@ -1,4 +1,4 @@
-package com.fooddelivery.newarchitecture;
+package org.younhong.fooddelivery.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.fooddelivery.BuildConfig;
-import com.fooddelivery.newarchitecture.components.MainComponentsRegistry;
-import com.fooddelivery.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import org.younhong.fooddelivery.BuildConfig;
+import org.younhong.fooddelivery.newarchitecture.components.MainComponentsRegistry;
+import org.younhong.fooddelivery.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
