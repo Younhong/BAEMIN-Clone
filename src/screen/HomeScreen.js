@@ -9,10 +9,10 @@ const HomeContainer = styled.View`
 const HomeBtn = styled.TouchableOpacity``;
 const BtnText = styled.Text``;
 
-const HomeScreen = ({ navigation: { navigate } }) => {
+const HomeScreen = ({ navigation: { goBack } }) => {
     return (
         <HomeContainer>
-            <HomeBtn onPress={() => navigate("BaeminMain")}>
+            <HomeBtn onPress={() => goBack()}>
                 <BtnText>메인으로 이동</BtnText>
             </HomeBtn>
         </HomeContainer>
