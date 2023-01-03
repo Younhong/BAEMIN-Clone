@@ -26,8 +26,12 @@ export default function App() {
   }, []);
 
   const getUserData = async() => {
-    const user2 = await firestore().collection('Users').doc('8OZhCQiSkWYQGqvkJ7gN').get();
-    console.log(user2.data());
+    const user1 = await firestore().collection('Users').doc('8OZhCQiSkWYQGqvkJ7gN').get();
+    console.log(user1.data());
+
+    const user2 = await firestore().collection('Users').get();
+    console.log(user2.docs.length);
+    console.log(user2.docs[0].data());
   }
 
   return (
