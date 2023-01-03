@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from "../screen/HomeScreen";
+import MyPageScreen from "../screen/MyPageScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -63,7 +64,7 @@ const HomeTab = () => {
             />
             <Tab.Screen
                 name="MY배민"
-                component={HomeScreen}
+                component={MyPageScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => {
                         return <Ionicons name="people" size={size} color={color} />

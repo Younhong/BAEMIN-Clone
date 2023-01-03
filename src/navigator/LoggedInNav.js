@@ -15,9 +15,3 @@ const LoggedInNav = () => (
 );
 
 export default LoggedInNav;
-
-/**
- * 배민메인: 특정 스크린 이동
- * 배민홈: 홈내비로 이동
- * 홈 내비: HomeNav, HomeStack
- */

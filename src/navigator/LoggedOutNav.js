@@ -9,7 +9,7 @@ const Nav = createNativeStackNavigator();
 const LoggedOutNav = () => (
     <Nav.Navigator
         screenOptions={{
-            presentation: "modal",
+            headerShown: false,
             headerTintColor: "white",
             headerStyle: {
                 backgroundColor: BLACK_COLOR,
